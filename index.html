@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
+    <title>Tetris Online - Play Good Old Tetris free &amp; unblocked</title>
     <meta name="renderer" content="webkit">
-    <meta name="description" content="使用React、Redux、Immutable制作的俄罗斯方块" />
-    <meta name="keywords" content="俄罗斯方块,Tetris,React,Redux,Immuatble,JavaScript">
-    <meta name="format-detection" content="telephone=no" />
-    <script>
+    <meta name="description" content="Play a free TETRIS game online. It is unblocked and will never get old.">
+    <meta name="keywords" content="tetris, tetris game, tetris online, play tetris">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://partner.googleadservices.com/gampad/cookie.js?domain=127.0.0.1&amp;callback=_gfp_s_&amp;client=ca-pub-9554815946678227&amp;gpid_exp=1"></script><script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202208100101/show_ads_impl.js" id="google_shimpl"></script><script>
         ;
         (function() {
             var w = parseInt(window.screen.width),
@@ -21,20 +19,79 @@
             m += 'target-densitydpi=device-dpi">';
             document.write(m);
         }());
-    </script>
+    </script><meta name="viewport" content="width=640,user-scalable=no,target-densitydpi=device-dpi">
     <meta charset="UTF-8">
-    <title>俄罗斯方块</title>
-    <link href="./loader.css" rel="stylesheet" />
-    <link href="css-1.0.1.css" rel="stylesheet">
-</head>
+    <link href="./loader.css" rel="stylesheet">
 
-<body>
-    <div id="root">
-        <div class="load">
-            <div class="loader">加载中...</div>
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script data-ad-client="ca-pub-9554815946678227" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-checked-head="true"></script>
+    <link href="css-2.0.2.5.css" rel="stylesheet">
+<meta http-equiv="origin-trial" content="AzoawhTRDevLR66Y6MROu167EDncFPBvcKOaQispTo9ouEt5LvcBjnRFqiAByRT+2cDHG1Yj4dXwpLeIhc98/gIAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjYxMjk5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A6+nc62kbJgC46ypOwRsNW6RkDn2x7tgRh0wp7jb3DtFF7oEhu1hhm4rdZHZ6zXvnKZLlYcBlQUImC4d3kKihAcAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjYxMjk5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/9La288e7MDEU2ifusFnMg1C2Ij6uoa/Z/ylwJIXSsWfK37oESIPbxbt4IU86OGqDEPnNVruUiMjfKo65H/CQwAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjYxMjk5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AzoawhTRDevLR66Y6MROu167EDncFPBvcKOaQispTo9ouEt5LvcBjnRFqiAByRT+2cDHG1Yj4dXwpLeIhc98/gIAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjYxMjk5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A6+nc62kbJgC46ypOwRsNW6RkDn2x7tgRh0wp7jb3DtFF7oEhu1hhm4rdZHZ6zXvnKZLlYcBlQUImC4d3kKihAcAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjYxMjk5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/9La288e7MDEU2ifusFnMg1C2Ij6uoa/Z/ylwJIXSsWfK37oESIPbxbt4IU86OGqDEPnNVruUiMjfKo65H/CQwAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjYxMjk5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><link rel="preload" href="https://adservice.google.co.ug/adsid/integrator.js?domain=127.0.0.1" as="script"><script type="text/javascript" src="https://adservice.google.co.ug/adsid/integrator.js?domain=127.0.0.1"></script><link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=127.0.0.1" as="script"><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=127.0.0.1"></script></head><body>
+    <div id="root"><div class="_3Lk6" style="transform: scale(0.533333);"><div class="_1fjB"><div class="_2OLA"><div class="DOXx"><span class="l _1xND" style="width: 40px;"></span><span class="l _1xND"></span><span class="l _1xND"></span><span class="l _1xND"></span><span class="l _1xND"></span><span class="r _1cYd" style="width: 40px;"></span><span class="r _1cYd"></span><span class="r _1cYd"></span><span class="r _1cYd"></span><span class="r _1cYd"></span></div><h1>Good Old Tetris</h1><div class="nVeA"><b class="c"></b><div class="clear"></div><b class="c"></b><b class="c"></b><div class="clear"></div><em></em><b class="c"></b><p></p><em></em><b class="c"></b><div class="clear"></div><b class="c"></b><b class="c"></b><div class="clear"></div><em></em><b class="c"></b><p></p><b class="c"></b><b class="c"></b><b class="c"></b><b class="c"></b><p></p><b class="c"></b><div class="clear"></div><b class="c"></b><b class="c"></b><div class="clear"></div><b class="c"></b><p></p><b class="c"></b><b class="c"></b><div class="clear"></div><b class="c"></b><div class="clear"></div><b class="c"></b><p></p><em></em><b class="c"></b><div class="clear"></div><em></em><b class="c"></b><div class="clear"></div><em></em><b class="c"></b><div class="clear"></div><em></em><b class="c"></b></div><div class="nVeA _395z"><em></em><b class="c"></b><div class="clear"></div><b class="c"></b><b class="c"></b><div class="clear"></div><b class="c"></b><p></p><b class="c"></b><div class="clear"></div><b class="c"></b><b class="c"></b><div class="clear"></div><b class="c"></b><p></p><b class="c"></b><b class="c"></b><b class="c"></b><b class="c"></b><p></p><em></em><b class="c"></b><div class="clear"></div><b class="c"></b><b class="c"></b><div class="clear"></div><em></em><b class="c"></b><p></p><b class="c"></b><b class="c"></b><div class="clear"></div><em></em><b class="c"></b><div class="clear"></div><em></em><b class="c"></b><p></p><b class="c"></b><div class="clear"></div><b class="c"></b><div class="clear"></div><b class="c"></b><div class="clear"></div><b class="c"></b></div></div><div class="_2iZA"><div class="_2lJh"><div class="_6pVK"><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class="c"></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class="c"></b><b class="c"></b><b class="c"></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class=""></b><b class=""></b><b class="c"></b><b class=""></b><b class="c"></b><b class="c"></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p><p><b class="c"></b><b class="c"></b><b class="c"></b><b class=""></b><b class="c"></b><b class="c"></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></p></div><div class="_1deS"><div><p>Max</p><div class="iHKP"><span class="bg _2kln"></span><span class="bg _2kln"></span><span class="bg _2kln"></span><span class="bg _2kln"></span><span class="bg ShGQ"></span><span class="bg _2hru"></span></div></div><p>Cleans</p><div class="iHKP"><span class="bg _2kln"></span><span class="bg _2kln"></span><span class="bg _2kln"></span><span class="bg _2kln"></span><span class="bg _2kln"></span><span class="bg _2hru"></span></div><p>Level</p><div class="iHKP"><span class="bg _2B-l"></span></div><p>Next</p><div class="_3Wmt"><div><b class=""></b><b class="c"></b><b class="c"></b><b class=""></b></div><div><b class=""></b><b class="c"></b><b class="c"></b><b class=""></b></div></div><div class="_8hag"><div class="bg EHci"></div><div class="bg _37mu"></div><div class="iHKP"><span class="bg _2hru"></span><span class="bg _3_Z_"></span><span class="bg hOfM"></span><span class="bg _2B-l"></span><span class="bg _1-BZ"></span></div></div></div></div></div></div><div class="J9SA" style="margin-top: 20px;"><div class="_1pg0 _23pZ _2TvZ" style="top: 0px; left: 374px;"><i class=""></i><em style="transform: translate(0px, 63px) scale(1, 2);"></em><span class="_1zCL">Rotation</span></div><div class="_1pg0 _23pZ _2TvZ" style="top: 180px; left: 374px;"><i class=""></i><em style="transform: translate(0px, -71px) rotate(180deg) scale(1, 2);"></em><span class="">Down</span></div><div class="_1pg0 _23pZ _2TvZ" style="top: 90px; left: 284px;"><i class=""></i><em style="transform: translate(60px, -12px) rotate(270deg) scale(1, 2);"></em><span class="">Left</span></div><div class="_1pg0 _23pZ _2TvZ" style="top: 90px; left: 464px;"><i class=""></i><em style="transform: translate(-60px, -12px) rotate(90deg) scale(1, 2);"></em><span class="">Right</span></div><div class="_1pg0 _23pZ p4fG" style="top: 100px; left: 52px;"><i class=""></i><span class="">Drop (SPACE)</span></div><div class="_1pg0 _3kg_ oW6K" style="top: 0px; left: 196px;"><i class=""></i><span class="">Reset(R)</span></div><div class="_1pg0 RBZg oW6K" style="top: 0px; left: 106px;"><i class=""></i><span class="">Sound(S)</span></div><div class="_1pg0 RBZg oW6K" style="top: 0px; left: 16px;"><i class=""></i><span class="">Pause(P)</span></div></div><div style="display: block;"><div class="side-nav-arrows _2iIk _15Dj"><div class="_2fH-"><em style="transform: translate(0px, -3px) scale(1, 2);"></em></div><div class="_I0Q"><em style="transform: translate(-7px, 3px) rotate(-90deg) scale(1, 2);"></em></div><div class="_1Pbk"><em style="transform: translate(0px, 9px) rotate(180deg) scale(1, 2);"></em></div><div class="_15Dj"><em style="transform: translate(7px, 3px) rotate(90deg) scale(1, 2);"></em></div></div><div class="_2iIk _I0Q"><div class="side-btn _3qj_">SPACE</div></div><div class="side-help _2iIk _111n"><h2>👾 Free Tetris Online 👾</h2><br><p>"Good Old Tetris" is a tribute to the good old tetris game, and it is not an affiliate to the TETRIS company. This game is <a href="https://github.com/chvin/react-tetris">Open Source</a><br><br>As being open source, you can&nbsp;<strong>play online tetris free and unblocked</strong> here.</p><br><div id="promo-left"><a href="https://2048game.com/">You may also enjoy<br>the 2048 Game<br><br><img src="/2048-icon.png" alt="2048 Game Icon"></a></div></div></div></div></div>
+
+    <div id="ad-right" class="ad">
+        <div class="ad-body">
+            <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Tetris - Vertical Responsive -->
+            <ins class="adsbygoogle" style="display: block; width: 160px; height: 600px;" data-ad-client="ca-pub-9554815946678227" data-ad-slot="3991978452" data-full-width-responsive="false" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_1_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 600px; width: 160px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:160px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="160" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-9554815946678227&amp;output=html&amp;h=600&amp;slotname=3991978452&amp;adk=1766706356&amp;adf=296466473&amp;pi=t.ma~as.3991978452&amp;w=160&amp;lmt=1660743719&amp;rafmt=12&amp;psa=0&amp;format=160x600&amp;url=http%3A%2F%2F127.0.0.1%3A5500%2F&amp;fwrattr=false&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTA0LjAuMTI5My41NCIsW10sZmFsc2UsbnVsbCwiNjQiLFtbIkNocm9taXVtIiwiMTA0LjAuNTExMi44MSJdLFsiIE5vdCBBO0JyYW5kIiwiOTkuMC4wLjAiXSxbIk1pY3Jvc29mdCBFZGdlIiwiMTA0LjAuMTI5My41NCJdXSxmYWxzZV0.&amp;dt=1660749316292&amp;bpp=3&amp;bdt=151&amp;idt=302&amp;shv=r20220815&amp;mjsv=m202208100101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=0x0&amp;nras=1&amp;correlator=1043050893494&amp;frm=20&amp;pv=1&amp;ga_vid=1730411613.1660743583&amp;ga_sid=1660749317&amp;ga_hid=810046420&amp;ga_fc=1&amp;u_tz=-420&amp;u_his=2&amp;u_h=615&amp;u_w=1093&amp;u_ah=615&amp;u_aw=1031&amp;u_cd=24&amp;u_sd=1.25&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=362&amp;bih=512&amp;scr_x=0&amp;scr_y=0&amp;eid=44759875%2C44759926%2C44759842%2C44770150&amp;oid=2&amp;pvsid=1517047201639105&amp;tmod=1524272194&amp;wsm=1&amp;uas=0&amp;nvt=2&amp;ref=http%3A%2F%2F127.0.0.1%3A5500%2F&amp;eae=0&amp;fc=1920&amp;brdim=62%2C0%2C62%2C0%2C1031%2C0%2C1031%2C615%2C362%2C512&amp;vis=1&amp;rsz=%7C%7CanEr%7C&amp;abl=CA&amp;pfx=0&amp;fu=33024&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;fsb=1&amp;xpc=Pfo6cfAazR&amp;p=http%3A//127.0.0.1%3A5500&amp;dtd=309" data-google-container-id="a!2" data-load-complete="true"></iframe></div></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
+        <div class="close-btn" style="visibility: visible;"><a href="javascript://" title="Click to hide ad" onclick="hideAd()">🙈 Ηіde Ad</a></div>
     </div>
-    <script type="text/javascript" src="app-1.0.1.js"></script>
-</body>
 
-</html>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-10949806-21"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-10949806-21');
+    </script>
+    <script type="text/javascript" src="app-2.0.2.5.js"></script><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-9554815946678227&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1660743719&amp;plat=16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32&amp;format=0x0&amp;url=http%3A%2F%2F127.0.0.1%3A5500%2F&amp;ea=0&amp;pra=5&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTA0LjAuMTI5My41NCIsW10sZmFsc2UsbnVsbCwiNjQiLFtbIkNocm9taXVtIiwiMTA0LjAuNTExMi44MSJdLFsiIE5vdCBBO0JyYW5kIiwiOTkuMC4wLjAiXSxbIk1pY3Jvc29mdCBFZGdlIiwiMTA0LjAuMTI5My41NCJdXSxmYWxzZV0.&amp;dt=1660749316288&amp;bpp=4&amp;bdt=147&amp;idt=179&amp;shv=r20220815&amp;mjsv=m202208100101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;nras=1&amp;correlator=1043050893494&amp;frm=20&amp;pv=2&amp;ga_vid=1730411613.1660743583&amp;ga_sid=1660749317&amp;ga_hid=810046420&amp;ga_fc=1&amp;u_tz=-420&amp;u_his=2&amp;u_h=615&amp;u_w=1093&amp;u_ah=615&amp;u_aw=1031&amp;u_cd=24&amp;u_sd=1.25&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=362&amp;bih=512&amp;scr_x=0&amp;scr_y=0&amp;eid=44759875%2C44759926%2C44759842%2C44770150&amp;oid=2&amp;pvsid=1517047201639105&amp;tmod=1524272194&amp;wsm=1&amp;uas=0&amp;nvt=2&amp;ref=http%3A%2F%2F127.0.0.1%3A5500%2F&amp;eae=2&amp;fc=1920&amp;brdim=62%2C0%2C62%2C0%2C1031%2C0%2C1031%2C615%2C362%2C512&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=267" data-google-container-id="a!1" data-load-complete="true"></iframe></div></ins>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20220815/r20190131/zrt_lookup.html" style="display: none;"></iframe>
