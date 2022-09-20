@@ -1,1 +1,1 @@
-# This site is live at https://freshteacher.tech/files
+# This site is live at https://freshteacher.tech/secondary
