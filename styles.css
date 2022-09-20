@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+
+::-webkit-scrollbar{
+    display: none;
+}
+
 :root {
     --white: #fff;
     --black: #1c2b2d;
@@ -22,6 +27,7 @@ html {
 
 body {
     font-family: "Open Sans", sans-serif;
+    border: 1px solid red;   
 }
 
 p {
