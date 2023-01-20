@@ -22,6 +22,21 @@ for (let i = 0; i < btns.length; i++) {
     });
 }
 
+//share files
+ function shareLink() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'My File',
+        text: 'Check out this file!',
+        url: 'https://example.com/my-file.pdf',
+      })
+        .then(() => console.log('Successful share'))
+        .catch((error) => console.log('Error sharing', error));
+    } else {
+      console.log("The Web Share API is not supported on this browser.");
+    }
+  }
+
 // SEARCH FILTER
 const search = document.getElementById("search");
 const productName = document.querySelectorAll(".product-details h2");
